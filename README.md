@@ -13,4 +13,6 @@ Tools to use:
 - Storybook
 - Formik
 - DjangoRestAPI
+
+Look into:
 - Gatsby
