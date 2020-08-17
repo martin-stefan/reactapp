@@ -27,3 +27,8 @@ Look into:
 - React lazy, memo, and Suspense - https://reactjs.org/blog/2018/10/23/react-v-16-6.html */
 - Typescript
 - MobX
+- Framer Motion 
+- React Reveal
+- React Motion
+- React Spring
+- React Anime
