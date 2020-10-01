@@ -5,7 +5,7 @@ None of this is definite as I am still researching
 
 Stack: 
 - React
-- Django
+- Node
 - Postgres
 
 Tools to use:
