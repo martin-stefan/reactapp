@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-let Todo = new Schema({
-    todo_description: {
+let Post = new Schema({
+    post_description: {
         type: String
     },
     todo_responsible: {
@@ -16,4 +16,4 @@ let Todo = new Schema({
     }
 });
 
-module.exports = mongoose.model('Todo', Todo);
+module.exports = mongoose.model('Post', Post);
