@@ -1,10 +1,11 @@
 import React from 'react';
-import './App.scss';
+
+import Post from './components/Post';
 
 function App() {
   return (
     <div className="App">
-      hey
+      <Post />
     </div>
   );
 }
