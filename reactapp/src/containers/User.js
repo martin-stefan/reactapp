@@ -5,10 +5,16 @@ const User = () => {
   return (
     <Aux>
       <header className="userHeader">
+
+        <div className="userImg"></div>
+
+
         <h1 className="userTitle">John Doe</h1>
         <h4 className="username">@johndoe</h4>
-        <div className="userStats">
+        <p className="userBio">Aspiring song artist just trying to share 
+          my music with the world. </p>
 
+        <div className="userStats">
           <div className="userStats__item">
             <h3 className="userStats__item--info">Followers</h3>
             <h3 className="userStats__item--info">333k</h3>
@@ -23,10 +29,8 @@ const User = () => {
             <h3 className="userStats__item--info">Likes</h3>
             <h3 className="userStats__item--info">1.1m</h3>
           </div>
-
-          <p className="userBio">Aspiring song artist just trying to share 
-            my music with the world. </p>
         </div>
+        
       </header>
     </Aux>
   
