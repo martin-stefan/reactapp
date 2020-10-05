@@ -7,17 +7,44 @@
   color: white;
 }
 
+.userImg {
+  height: 150px;
+  width: 150px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 8rem;
+  transform: translateY(-50%);
+}
+
 .userTitle {
   font-size: 8rem;
   margin: 0;
+  position: absolute;
+  top: 11rem;
+  left: 28rem;
 }
 
 .username {
-  font-size: 4rem;
+  font-size: 3rem;
   margin: 0;
+  position: absolute;
+  top: 19rem;
+  left: 28rem;
+}
+
+.userBio {
+  font-size: 2rem;
+  position: absolute;
+  top: 22rem;
+  left: 28rem;
 }
 
 .userStats {
+  position: absolute;
+  top: 8.5rem;
+  right: 20vw;
   display: flex;
 
   &__item {
@@ -26,6 +53,3 @@
   }
 }
 
-.userBio {
-  font-size: 2rem;
-}
