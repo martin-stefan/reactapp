@@ -1,0 +1,44 @@
+.hero {
+  color: white; 
+
+  &__intro {
+    text-align: center;
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    flex-flow: column;
+    width: 70vh;
+  }
+}
+
+.buttons {
+  width: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+.button {
+  margin: 0 25px;
+  color: white;
+  width: 200px;
+  height: 70px;
+  font-size: 20px;
+  background: rgba(81, 144, 99, 0.4);
+  display: inline-block;
+  border: none;
+
+  &:hover {
+    box-shadow: 0 0 1rem rgba(0, 0, 0, .3);
+    cursor: pointer;
+  }
+}
