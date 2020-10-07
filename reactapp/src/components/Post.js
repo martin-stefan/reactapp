@@ -2,17 +2,17 @@ import React from 'react';
 
 const Post = () => {
   return (
-    <div>
-      <h1>Song Title</h1>
-      <h2>Artist Name</h2>
-      <p>Album Name</p>
+    <div className="post">
+      <h1 className="post__title">Song Title</h1>
+      <h2 className="post__artist">Artist Name</h2>
+      <p className="post__album">Album</p>
 
-      <p>Username</p>
+      <p className="post__user">@johndoe</p>
 
-      <img src="#" alt="Album Cover Image"/>
+      <img src="#" alt="Album Cover Image" className="post__img"/>
       
-      <p>Streaming services</p>
-      <p>Genres</p>
+      <p className="post__service">Streaming services</p>
+      <p className="post__genre">Genres</p>
      
     </div>
   )
