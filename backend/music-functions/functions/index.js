@@ -1,15 +1,10 @@
 const functions = require('firebase-functions');
-const { db } = require('./util/admin');
+const { admin, db } = require('./util/admin');
 
 
 // // Create and Deploy Your First Cloud Functions
 // // https://firebase.google.com/docs/functions/write-firebase-functions
 //
-exports.helloWorld = functions.https.onRequest((request, response) => {
-  functions.logger.info("Hello logs!", {structuredData: true});
-  response.send("Hello from Firebase!");
-});
-
 
 exports.getPosts = functions.https.onRequest((req, res) => {
   db.collection("post")
@@ -30,4 +25,26 @@ exports.getPosts = functions.https.onRequest((req, res) => {
       return res.json(posts);
     })
     .catch(err => console.error(err));
+});
+
+exports.newPost = functions.https.onRequest((req, res) => {
+  const newPost = {
+    title: req.body.title,
+    artist: req.body.artist,
+    commentNum: 0,
+    comments: [],
+    datePosted: admin.firestore.Timestamp.fromDate(new Date()),
+    likes: 0,
+    user: req.body.user
+  };
+
+  db.collection('posts')
+    .add(newPost)
+    .then(doc => {
+      res.json({ message: `Post ${doc.id} was created successfully`})
+    })
+    .catch(err => {
+      res.status(500).json({ error: `Post was not created successfully`});
+      console.error(err);
+    });
 });
