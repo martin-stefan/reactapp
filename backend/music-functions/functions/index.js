@@ -7,7 +7,7 @@ const { admin, db } = require('./util/admin');
 //
 
 exports.getPosts = functions.https.onRequest((req, res) => {
-  db.collection("post")
+  db.collection("posts")
     .get()
     .then(data => {
       let posts = [];
@@ -38,10 +38,10 @@ exports.newPost = functions.https.onRequest((req, res) => {
     user: req.body.user
   };
 
-  db.collection('posts')
+  db.collection("posts")
     .add(newPost)
     .then(doc => {
-      res.json({ message: `Post ${doc.id} was created successfully`})
+      return res.json({ message: `Post ${doc.id} was created successfully`});
     })
     .catch(err => {
       res.status(500).json({ error: `Post was not created successfully`});
