@@ -1,39 +1,38 @@
 const functions = require('firebase-functions');
 const { admin, db } = require('./util/admin');
 
+const express = require('express');
+const app = express();
 
 // // Create and Deploy Your First Cloud Functions
 // // https://firebase.google.com/docs/functions/write-firebase-functions
 //
 
-exports.getPosts = functions.https.onRequest((req, res) => {
+
+app.get('/posts', (req, res) => {
   db.collection("posts")
-    .get()
-    .then(data => {
-      let posts = [];
-      data.forEach(doc => {
-        posts.push({
-          title: doc.data().title,
-          artist: doc.data().artist,
-          commentNum: doc.data().commmentNum,
-          comments: doc.data().comments,
-          datePosted: doc.data().datePosted,
-          likes: doc.data().likes,
-          user: doc.data().user
-        });
+  .orderBy('datePosted')
+  .get()
+  .then(data => {
+    let posts = [];
+    data.forEach(doc => {
+      posts.push({
+        postId: doc.id,
+        ...doc.data()
       });
-      return res.json(posts);
-    })
-    .catch(err => console.error(err));
+    });
+    return res.json(posts);
+  })
+  .catch(err => console.error(err));
 });
 
-exports.newPost = functions.https.onRequest((req, res) => {
+app.post('/post', (req, res) => {
   const newPost = {
     title: req.body.title,
     artist: req.body.artist,
     commentNum: 0,
     comments: [],
-    datePosted: admin.firestore.Timestamp.fromDate(new Date()),
+    datePosted: new Date().toISOString(),
     likes: 0,
     user: req.body.user
   };
@@ -48,3 +47,5 @@ exports.newPost = functions.https.onRequest((req, res) => {
       console.error(err);
     });
 });
+
+exports.api = functions.region('northamerica-northeast1').https.onRequest(app);
