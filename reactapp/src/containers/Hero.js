@@ -3,7 +3,7 @@ import React from 'react';
 
 const Hero = () => {
   return (
-    <div className="hero">
+    <section className="hero">
 
       <div className="hero__intro">
         <h1 className="xlargeTitle">Music</h1>
@@ -14,7 +14,7 @@ const Hero = () => {
         <button className="button">Join Now</button>
         <button className="button">Login</button>
       </div>
-    </div>
+    </section>
   );
 }
 

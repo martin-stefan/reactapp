@@ -1,5 +1,7 @@
 .hero {
   color: white; 
+  height: 100vh;
+  background-image: linear-gradient(to top, rgb(245, 245, 245),rgb(187, 213, 182));
 
   &__intro {
     text-align: center;
