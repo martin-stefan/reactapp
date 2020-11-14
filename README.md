@@ -9,4 +9,4 @@ Stack:
   Backend:
     - Node.js
     - Express.js
-    - MongoDB
+    - Firebase
